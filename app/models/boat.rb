@@ -1,4 +1,7 @@
 class Boat < ApplicationRecord
+
+  has_many :bookings, dependent: :destroy
+
   validates :name, uniqueness: true, presence: true
   validates :address, presence: true
   validates :description, presence: true
