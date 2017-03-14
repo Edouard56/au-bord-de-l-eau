@@ -1,19 +1,20 @@
 
 <% if boat.photo? %>
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+<div class="card text-left" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)),
          url('<%= cl_image_path boat.photo.path %>')">
   <% else %>
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path("fishing_boat_fdoghg") %>')">
+    <div class="card" style="background-image: linear-gradient(rgba(1,0,0,0.3), rgba(7,0,0,0.2)), url('<%= cl_image_path("fishing_boat_fdoghg") %>')">
   <% end %>
-  <div class="card-category"></div>
+  <div class="card-category">
+      <p> <%= boat.name %> </p>
+  </div>
     <div class="card-description">
-      <h2> <%= boat.name %> </h2>
       <p>price : <%= boat.price_per_day %> €/day</p>
       <p>Passengers : <%= boat.nb_of_passengers %> </p>
     </div>
-  <img class="card-user avatar" src="user.jpg">
   <%= link_to '', boat_path(boat), class: "card-link" %>
-</div>
+  </div>
+
 
 
 
