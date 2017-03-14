@@ -1,0 +1,25 @@
+
+
+<div class="container">
+  <h1>My informations</h1>
+  <%= current_user.email %>
+</div>
+
+<div class="container">
+  <h1>My Bookings</h1>
+    <% current_user.bookings.each do |booking| %>
+      <%= booking.boat.name %>
+      <%= booking.starts_at%>
+      <%= booking.ends_at%>
+    <% end %>
+</div>
+
+<div class="container">
+  <h1>My boats</h1>
+    <% current_user.boats.each do |boat| %>
+      <%= boat.name %>
+      <%= boat.address %>
+      <%= boat.description %>
+      <%= boat.price_per_day %>
+    <% end %>
+</div>

@@ -1,6 +1,7 @@
 class Boat < ApplicationRecord
   has_attachments :photo, maximum: 5
   has_many :bookings, dependent: :destroy
+  belongs_to :user
 
   validates :name, uniqueness: true, presence: true
   validates :address, presence: true
