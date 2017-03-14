@@ -1,5 +1,6 @@
 class BoatsController < ApplicationController
-  before_action :set_boat, only: [:show]
+  skip_before_action :authenticate_user!, only: [:home, :show]
+  before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
     @boats = Boat.all
@@ -23,19 +24,21 @@ class BoatsController < ApplicationController
   end
 
   def edit
-    @boat = Boat.find(params[:id])
   end
 
   def update
-    @boat = Boat.find(params[:id])
     if @boat.update(boat_params)
+
       redirect_to boat_path(@boat)
     else
       render :edit
     end
   end
 
-  def delete
+  def destroy
+    @boat.destroy
+
+    redirect_to boats_path
   end
 
 private
