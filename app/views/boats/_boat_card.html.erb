@@ -3,7 +3,7 @@
 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('<%= cl_image_path @boat.photo.path, height: 300, width: 400, crop: :fill %>')">
   <% else %>
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path("fishing_boat_froc0q",
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path("fishing_boat_fdoghg",
       width: 400, height: 300, crop: :fill) %>')">
   <% end %>
   <div class="card-category"></div>
@@ -13,6 +13,8 @@
       <p>Passengers : <%= boat.nb_of_passengers %> </p>
     </div>
   <img class="card-user avatar" src="user.jpg">
-  <a class="card-link" href="#" ></a>
+  <%= link_to '', boat_path(boat), class: "card-link" %>
 </div>
+
+
 
