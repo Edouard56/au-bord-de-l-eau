@@ -1,10 +1,9 @@
 
 <% if boat.photo? %>
 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path @boat.photo.path, height: 300, width: 400, crop: :fill %>')">
+         url('<%= cl_image_path boat.photo.path %>')">
   <% else %>
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path("fishing_boat_fdoghg",
-      width: 400, height: 300, crop: :fill) %>')">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path("fishing_boat_fdoghg") %>')">
   <% end %>
   <div class="card-category"></div>
     <div class="card-description">
