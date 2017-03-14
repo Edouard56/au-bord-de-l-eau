@@ -1,12 +1,34 @@
-<div class="container">
-  <h1> <%= @boat.name %></h1>
-  <p>price : <%= @boat.price_per_day %> €/day</p>
-  <p>Passengers : <%= @boat.nb_of_passengers %> </p>
-  <p>Description : <%= @boat.description %></p>
-    <% if @boat.photo? %>
+<div >
+  <% if @boat.photo? %>
       <%= cl_image_tag @boat.photo.path, width: 200, height: 300, crop: :fill %>
-      <% else %>
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path("fishing_boat_froc0q",
-      width: 400, height: 300, crop: :fit) %>')">
-    <% end %>
+  <% else %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path("fishing_boat_fdoghg", width: 400, height: 300, crop: :fit) %>')"></div>
+  <% end %>
 </div>
+
+<div class="container">
+  <div class="row">
+      <h1 class="text-center"> <%= @boat.name %></h1>
+        <div class="col-xs-12 col-md-3">
+          <p>price : <%= @boat.price_per_day %> €/day</p>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <p>Passengers : <%= @boat.nb_of_passengers %> </p>
+        </div>
+   </div>
+      <p>Description : <%= @boat.description %></p>
+</div>
+
+
+
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :starts_at %>
+    <%= f.input :ends_at%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
