@@ -1,5 +1,5 @@
 class Boat < ApplicationRecord
-  has_attachments :photo, maximum: 5
+  has_attachment :photo
   has_many :bookings, dependent: :destroy
   belongs_to :user
 

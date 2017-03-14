@@ -1,6 +1,7 @@
+
 <div class="text-center">
   <h1>All available boats</h1>
-    <div class="container text-center">
+    <div class="container">
       <div class="row">
         <% @boats.each do |boat| %>
           <div class="col-xs-12 col-sm-4">
@@ -11,3 +12,4 @@
     </div>
 </div>
 
+<%= link_to "Add a boat", new_boat_path, class: "btn btn-primary" %>
