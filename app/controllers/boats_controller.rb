@@ -15,10 +15,6 @@ class BoatsController < ApplicationController
   def show
     @booking = Booking.new
     @boat = Boat.find(params[:id])
-    @alert_message =
-    "Hello Buddy !
-    Welcome on board of #{@boat.name} : #{@boat.description}
-    Ready to go fishing with me"
   end
 
   def new
