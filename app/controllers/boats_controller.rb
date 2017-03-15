@@ -3,11 +3,22 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @boats = Boat.all
+    @boats = Boat.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@boats) do |boat, marker|
+      marker.lat boat.latitude
+      marker.lng boat.longitude
+      # marker.infowindow render_to_string(partial: "/boats/map_box", locals: { boat: boat })
+    end
   end
 
   def show
     @booking = Booking.new
+    @boat = Boat.find(params[:id])
+    @alert_message =
+    "Hello Buddy !
+    Welcome on board of #{@boat.name} : #{@boat.description}
+    Ready to go fishing with me"
   end
 
   def new
