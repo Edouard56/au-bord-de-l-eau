@@ -1,25 +1,42 @@
 
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+          <h1>My informations</h1>
+          <%= current_user.email %>
+      </div>
+    </div>
 
-<div class="container">
-  <h1>My informations</h1>
-  <%= current_user.email %>
-</div>
 
-<div class="container">
-  <h1>My Bookings</h1>
-    <% current_user.bookings.each do |booking| %>
-      <%= booking.boat.name %>
-      <%= booking.starts_at%>
-      <%= booking.ends_at%>
-    <% end %>
-</div>
 
-<div class="container">
-  <h1>My boats</h1>
-    <% current_user.boats.each do |boat| %>
-      <%= boat.name %>
-      <%= boat.address %>
-      <%= boat.description %>
-      <%= boat.price_per_day %>
-    <% end %>
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>My Bookings</h1>
+        <ul>
+          <% current_user.bookings.each do |booking| %>
+            <li>
+              <%= booking.boat.name %>
+              <p>Booking starts on <%= booking.starts_at.to_time.strftime('%B %e at %l:%M %p') %> and finish on <%= booking.ends_at.to_time.strftime('%B %e at %l:%M %p') %>. </p>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>My boats</h1>
+
+          <% current_user.boats.each do |boat| %>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <%= render 'boats/boat_card', boat: boat %>
+            </div>
+          <% end %>
+
+      </div>
+    </div>
+  </div>
 </div>
