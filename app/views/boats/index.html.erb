@@ -1,19 +1,14 @@
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,1,3,0.2) 0%, rgba(123,2,1,0.2) 50%), url(<%= asset_path 'banner_photo.jpg' %>) ">
-  <div class="banner-content">
-    <h1>Fishing buddy</h1>
-    <h3>You will never fish alone</h3>
+<div class="wrapper_home">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,1,3,0.2) 0%, rgba(123,2,1,0.2) 50%), url(<%= asset_path 'banner_photo.jpg' %>) ">
+    <div class="banner-content">
+      <h1>Fishing buddy</h1>
+      <h3>You will never fish alone</h3>
+    </div>
   </div>
-</div>
-
-<%  if user_signed_in? %>
-<%= link_to "Mes informations", user_path(current_user), class: "btn btn-primary" %>
-<% end %>
-
-</div>
-
-<div class="text-center">
-  <h1>All available boats</h1>
+  <div class="container">
+    <div class="text-center">
+    <h1>All available buddies and their boats</h1>
       <div class="row">
         <% @boats.each do |boat| %>
           <div class="col-xs-12 col-sm-4 col-md-4">
@@ -21,28 +16,27 @@
           </div>
         <% end %>
       </div>
-</div>
-
-<div class="wrapper">
-  <div class="row center">
-    <div id="map" style="width: 100%; height: 600px;">
-      <% content_for(:after_js) do %>
-        <%= javascript_tag do %>
-          $(document).ready(function() {
-            var handler = Gmaps.build('Google');
-            handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
-              markers = handler.addMarkers(<%= raw @hash.to_json %>);
-              handler.bounds.extendWith(markers);
-              handler.fitMapToBounds();
-              if (markers.length == 0) {
-                handler.getMap().setZoom(2);
-              } else if (markers.length == 1) {
-                handler.getMap().setZoom(14);
-              }
+      <div class="row">
+      <div id="map" style="width: 100%; height: 600px;">
+        <% content_for(:after_js) do %>
+          <%= javascript_tag do %>
+            $(document).ready(function() {
+              var handler = Gmaps.build('Google');
+              handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
+                markers = handler.addMarkers(<%= raw @hash.to_json %>);
+                handler.bounds.extendWith(markers);
+                handler.fitMapToBounds();
+                if (markers.length == 0) {
+                  handler.getMap().setZoom(2);
+                } else if (markers.length == 1) {
+                  handler.getMap().setZoom(14);
+                }
+              });
             });
-          });
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+      </div>
     </div>
   </div>
 </div>
