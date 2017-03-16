@@ -3,7 +3,7 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:search] == nil
+    if params[:search] == ""
       @boats = Boat.where.not(latitude: nil, longitude: nil)
     elsif params[:search]
       @boats = Boat.near(params[:search], 200)

@@ -3,10 +3,10 @@
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,1,3,0.2) 0%, rgba(123,2,1,0.2) 50%), url(<%= asset_path 'banner_photo.jpg' %>) ">
     <div class="banner-content">
       <h1>Fishing buddy</h1>
-      <h3>You will never fish alone</h3>
+      <h2>Find your next fishing trip</h2>
       <%= form_tag(boats_path, :method => "get") do %>
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag 'Find buddies near your place', class: 'btn btn-primary' %>
+        <%= text_field_tag :search, params[:search]%>
+        <%= submit_tag 'Search', class: 'btn btn-treehouse' %>
       <% end %>
     </div>
   </div>
