@@ -3,6 +3,11 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
+    @boat = Boat.new(name: "faker", address: params[:search], description: "faker", price_per_day: 0, nb_of_passengers: 0)
+    @boat.save
+    @search_lng = @boat.longitude
+    @search_lat = @boat.latitude
+    @boat.destroy
     if params[:search] == ""
       @boats = Boat.where.not(latitude: nil, longitude: nil)
     elsif params[:search]
@@ -10,11 +15,26 @@ class BoatsController < ApplicationController
     else
       @boats = Boat.where.not(latitude: nil, longitude: nil)
     end
+    if params[:search] == ""
+      @hash = Gmaps4rails.build_markers(@boats) do |boat, marker|
+        marker.lat boat.latitude
+        marker.lng boat.longitude
+        marker.infowindow render_to_string(partial: "/boats/map_box", locals: { boat: boat })
+      end
+    elsif params[:search]
+      @hash = Gmaps4rails.build_markers(@boats) do |boat, marker|
+        marker.lat boat.latitude
+        marker.lng boat.longitude
+        marker.infowindow render_to_string(partial: "/boats/map_box", locals: { boat: boat })
+      end
+      @hash << {lng: @search_lng, lat: @search_lat}
 
-    @hash = Gmaps4rails.build_markers(@boats) do |boat, marker|
-      marker.lat boat.latitude
-      marker.lng boat.longitude
-      marker.infowindow render_to_string(partial: "/boats/map_box", locals: { boat: boat })
+    else
+       @hash = Gmaps4rails.build_markers(@boats) do |boat, marker|
+        marker.lat boat.latitude
+        marker.lng boat.longitude
+        marker.infowindow render_to_string(partial: "/boats/map_box", locals: { boat: boat })
+      end
     end
   end
 
