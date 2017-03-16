@@ -18,12 +18,13 @@
   padding: 5px 10px;
   border-radius: 4px;
   font-weight: bold;
-  background: #6AD58B;
+  background: #3079ab;
   transition: background 0.3s ease;
 }
 .btn-treehouse:hover {
   opacity: 1;
-  background: #3ac162;
+  border-color: #1f5768;
+  background: #1f5768;
   text-decoration: none;
   color: white;
 }
@@ -31,4 +32,9 @@
 
 #search {
     color: black;
+}
+
+.banner-form {
+  margin-top: 30px;
+  padding: 5px 10px;
 }
