@@ -1,9 +1,8 @@
 
   <h3><%= boat.name %></h3>
   <p><%= boat.description %></p>
-    <% if boat.photo? %>
-    <div class="card text-left" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)),
-           url('<%= cl_image_path boat.photo.path %>')">
+  <% if boat.photo? %>
+    <%= cl_image_tag boat.photo.path, height: 100, width: 200, crop: :fill %>
     <% else %>
       <div class="card" style="background-image: linear-gradient(rgba(1,0,0,0.3), rgba(7,0,0,0.2)), url('<%= cl_image_path("fishing_boat_fdoghg") %>')">
     <% end %>
