@@ -4,6 +4,10 @@
     <div class="banner-content">
       <h1>Fishing buddy</h1>
       <h3>You will never fish alone</h3>
+      <%= form_tag(boats_path, :method => "get") do %>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag 'Find buddies near your place', class: 'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
   <div class="container">
