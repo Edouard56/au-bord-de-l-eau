@@ -1,6 +1,6 @@
 
 
-<h1 class="no-top-margin text-center">Welcome to your dashboard : <%= current_user.email %></h1>
+<h1 class="no-top-margin text-center">Welcome to your dashboard <%= current_user.first_name %> <%= current_user.last_name %></h1>
 <br>
 
 
@@ -25,7 +25,7 @@
               <thead>
                 <tr>
                   <th><strong>Boat</strong></th>
-                  <th>Fisherman</th>
+                  <th>Firstname</th>
                   <th>Date</th>
                   <th>Booking status</th>
                 </tr>
@@ -36,7 +36,7 @@
                 <% boat.bookings.each do |booking| %>
                   <tr>
                     <td><%= booking.boat.name %></td>
-                    <td><%= booking.user.email %></td>
+                    <td><%= booking.user.first_name %></td>
                     <td><%= booking.starts_at %></td>
                     <td>
                       <% if booking.accepted == "no" %>
