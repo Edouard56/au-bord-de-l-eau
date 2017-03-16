@@ -1,1 +1,11 @@
-<h1><%= boat.name %></h1>
+
+  <h3><%= boat.name %></h3>
+  <p><%= boat.description %></p>
+  <%= cl_image_tag boat.photo.path, height: 100, width: 200, crop: :fill %>
+  <div class="box-container">
+    <p><strong>Location: </strong><%= boat.address %></p>
+    <p><strong>price per day: </strong><%= boat.price_per_day %> euros</p>
+    <p><strong>number of passengers accepted: </strong><%= boat.nb_of_passengers %> pax</p>
+  </div>
+  <%= link_to '', boat_path(boat), class: "card-link" %>
+
