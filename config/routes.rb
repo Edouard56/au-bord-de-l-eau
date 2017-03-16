@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   resources :boats do
     resources :bookings, only: [ :create ]
   end
+
+  get "booking/:id/accept", to: "bookings#accept", as: "accept_booking"
+  get "booking/:id/decline", to: "bookings#decline", as: "decline_booking"
 end
