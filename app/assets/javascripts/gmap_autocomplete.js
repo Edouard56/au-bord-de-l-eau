@@ -3,7 +3,7 @@ $(document).ready(function() {
 
   if (boat_address) {
     var autocomplete = new google.maps.places.Autocomplete(boat_address, { types: ['geocode'] });
-    google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+    google.maps.event.addListener(autocomplete, 'place_changed');
     google.maps.event.addDomListener(boat_address, 'keydown', function(e) {
       if (e.keyCode == 13) {
         e.preventDefault(); // Do not submit the form on Enter.
@@ -12,12 +12,26 @@ $(document).ready(function() {
   }
 });
 
-function onPlaceChanged() {
-  var place = this.getPlace();
-  var components = getAddressComponents(place);
 
-  $('#boat_address').trigger('blur').val(components.address);
-}
+
+$(document).ready(function() {
+  var search = $('#search').get(0);
+
+  if (search) {
+    var autocomplete = new google.maps.places.Autocomplete(search, { types: ['geocode'] });
+    google.maps.event.addListener(autocomplete, 'place_changed');
+    google.maps.event.addDomListener(search, 'keydown', function(e) {
+      if (e.keyCode == 13) {
+        e.preventDefault(); // Do not submit the form on Enter.
+      }
+    });
+  }
+});
+
+
+
+
+
 
 function getAddressComponents(place) {
   // If you want lat/lng, you can look at:
