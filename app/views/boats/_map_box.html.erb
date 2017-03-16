@@ -4,7 +4,7 @@
   <% if boat.photo? %>
     <%= cl_image_tag boat.photo.path, height: 100, width: 200, crop: :fill %>
     <% else %>
-    <div class="card" style="background-image: linear-gradient(rgba(1,0,0,0.3), rgba(7,0,0,0.2)), url('<%= cl_image_path("fishing_boat_fdoghg") %>')">
+      <div class="card" style="background-image: linear-gradient(rgba(1,0,0,0.3), rgba(7,0,0,0.2)), url('<%= cl_image_path("fishing_boat_fdoghg") %>')">
     <% end %>
   <div class="box-container">
     <p><strong>Location: </strong><%= boat.address %></p>

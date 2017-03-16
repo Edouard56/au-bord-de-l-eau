@@ -1,40 +1,79 @@
 
-<div class="wrapper">
-  <div class="container text-center">
-  <h1 class="no-top-margin">Welcome to your dashboard</h1>
-   <div class="align">
-     <p><strong>Email address :</strong></p>
-     <%= current_user.email %>
-   </div>
-    <br>
 
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>My Bookings</h1>
-        <ul>
-          <% current_user.bookings.each do |booking| %>
-            <li>
-              <%= booking.boat.name %>
-              <p>Booking starts on <%= booking.starts_at.to_time.strftime('%B %e at %l:%M %p') %> and finish on <%= booking.ends_at.to_time.strftime('%B %e at %l:%M %p') %>. </p>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+<h1 class="no-top-margin text-center">Welcome to your dashboard <%= current_user.first_name %> <%= current_user.last_name %></h1>
+<br>
+
+
+<div class="container">
+  <h2>My boats</h2>
+  <div class="row">
+  <% current_user.boats.each do |boat| %>
+    <div class="col-xs-12 col-md-4">
+    <%= render 'boats/boat_card', boat: boat %>
     </div>
+    <% end %>
+  </div>
+</div>
 
 
-
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>My boats</h1>
-
-          <% current_user.boats.each do |boat| %>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <%= render 'boats/boat_card', boat: boat %>
-            </div>
+<div class="container">
+  <div class="row">
+    <div class="booking-content">
+      <div class="col-sm-12">
+      <h2> Your boats bookings</h2>
+        <table class="table text-left">
+              <thead>
+                <tr>
+                  <th><strong>Boat</strong></th>
+                  <th>Firstname</th>
+                  <th>Date</th>
+                  <th>Booking status</th>
+                </tr>
+              </thead>
+                <% @boats.each do |boat| %>
+                  <% unless boat.bookings.empty? %>
+              <tbody>
+                <% boat.bookings.each do |booking| %>
+                  <tr>
+                    <td><%= booking.boat.name %></td>
+                    <td><%= booking.user.first_name %></td>
+                    <td><%= booking.starts_at %></td>
+                    <td>
+                      <% if booking.accepted == "no" %>
+                        <%= link_to "Change status to YES", accept_booking_path(booking), class: "btn btn-success" %>
+                      <% elsif booking.accepted == "yes" %>
+                        <%= link_to "Change status to NO", decline_booking_path(booking), class: "btn btn-danger" %>
+                      <% else %>
+                        <%= link_to "yes", accept_booking_path(booking), class: "btn btn-success" %>
+                        <%= link_to "no", decline_booking_path(booking), class: "btn btn-danger" %>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            <% end %>
           <% end %>
-
+        </table>
       </div>
     </div>
   </div>
 </div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Your Bookings</h2>
+      <ul>
+        <% current_user.bookings.each do |booking| %>
+          <li>
+            <%= booking.boat.name %>
+            <p>Booking starts on <%= booking.starts_at.to_time.strftime('%B %e at %l:%M %p') %> and finish on <%= booking.ends_at.to_time.strftime('%B %e at %l:%M %p') %>. </p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
