@@ -4,8 +4,8 @@
     <div class="banner-content">
       <h1>Fishing buddy</h1>
       <h2>Find your next fishing trip</h2>
-      <div class="banner-form">
-        <%= form_tag(boats_path, :method => "get") do %>
+      <div class="banner-form" id="search-form">
+        <%= form_tag(boats_path, method: :get, remote: true) do %>
           <%= text_field_tag :search, params[:search]%>
           <%= submit_tag 'Search', class: 'btn btn-treehouse' %>
         <% end %>
@@ -14,14 +14,10 @@
   </div>
   <div class="container">
     <div class="text-center">
-    <h2>All available buddies and their boats</h2>
-      <div class="row">
-        <% @boats.each do |boat| %>
-          <div class="col-xs-12 col-sm-4 col-md-4">
-            <%= render 'boat_card', boat: boat %>
-          </div>
-        <% end %>
-      </div>
+    <h2 id="title"> All available buddies and their boats </h2>
+    <div id="boats">
+      <%= render 'boats_list', boats: @boats %>
+    </div>
       <br>
       <div class="row">
       <div id="map" style="width: 100%; height: 500px;">

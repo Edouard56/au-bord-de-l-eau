@@ -1,0 +1,8 @@
+
+   <div class="row">
+     <% boats.each do |boat| %>
+       <div class="col-xs-12 col-sm-4 col-md-4">
+         <%= render 'boat_card', boat: boat %>
+       </div>
+     <% end %>
+   </div>
