@@ -5,7 +5,7 @@
       <h1>Fishing buddy</h1>
       <h2>Find your next fishing trip</h2>
       <div class="banner-form" id="search-form">
-        <%= form_tag(boats_path, method: :get, remote: true) do %>
+        <%= form_tag(boats_path, method: :get) do %>
           <%= text_field_tag :search, params[:search]%>
           <%= submit_tag 'Search', class: 'btn btn-treehouse' %>
         <% end %>
