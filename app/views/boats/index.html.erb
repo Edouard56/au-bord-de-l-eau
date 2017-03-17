@@ -30,6 +30,10 @@
           $(document).ready(function() {
             var handler = Gmaps.build('Google');
             handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
+              // handler.addMarker({
+              //   lat: <%= @search_lat %>,
+              //   lng: <%= @search_lng %>,
+              // })
               markers = handler.addMarkers(<%= raw @hash.to_json %>);
               handler.bounds.extendWith(markers);
               handler.fitMapToBounds();

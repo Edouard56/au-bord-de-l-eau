@@ -27,7 +27,14 @@ class BoatsController < ApplicationController
         marker.lng boat.longitude
         marker.infowindow render_to_string(partial: "/boats/map_box", locals: { boat: boat })
       end
-      @hash << {lng: @search_lng, lat: @search_lat}
+      # var pinimage = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
+        # var marker = new google.maps.Marker({
+        #     position : latlng,
+        #     map : map,
+        #     title : "Somu's House, Bitches!"
+        # });
+
+      @hash << {lng: @search_lng, lat: @search_lat, infowindow: "I am here" }
 
     else
        @hash = Gmaps4rails.build_markers(@boats) do |boat, marker|
