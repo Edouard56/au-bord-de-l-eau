@@ -44,6 +44,19 @@
     <% end %>
   </div>
 </div>
+<br>
+<br>
+<br>s
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4 btn btn-danger">
+      <%= link_to "Delete this boat", boat_path(@boat),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+    </div>
+  </div>
+</div>
 
 
 
