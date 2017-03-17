@@ -1,0 +1,48 @@
+          <h2>Your boats bookings</h2>
+          <% if requests_on_my_boats.blank? %>
+            <h3>Sorry, you have no booking for your boats</h3>
+          <% else %>
+            <table class="table text-left">
+              <thead>
+                <tr>
+                  <th><strong>Boat</strong></th>
+                  <th>Firstname</th>
+                  <th>Date</th>
+                  <th>Change status</th>
+                  <th>Booking status</th>
+                </tr>
+              </thead>
+              <% boats.each do |boat| %>
+                <% unless boat.bookings.empty? %>
+                  <tbody>
+                  <% boat.bookings.each do |booking| %>
+                    <tr>
+                      <td><%= booking.boat.name %></td>
+                      <td><%= booking.user.first_name %></td>
+                      <td><%= booking.starts_at.strftime('%B %e') %></td>
+                      <td>
+                        <% if booking.accepted == "no" %>
+                          <%= link_to "Accept", accept_booking_path(booking), class: "btn btn-success", remote: true %>
+                        <% elsif booking.accepted == "yes" %>
+                          <%= link_to "Decline", decline_booking_path(booking), class: "btn btn-danger", remote: true %>
+                        <% else %>
+                          <%= link_to "Accept", accept_booking_path(booking), class: "btn btn-success", remote: true %>
+                          <%= link_to "Decline", decline_booking_path(booking), class: "btn btn-danger", remote: true %>
+                        <% end %>
+                      </td>
+                      <td>
+                        <% if booking.accepted == "no" %>
+                          <i class="fa fa-times check-red" aria-hidden="true"></i>
+                        <% elsif booking.accepted == "yes" %>
+                         <i class="fa fa-check-circle-o check-green" aria-hidden="true"></i>
+                        <% else %>
+                         <p>Pending</p>
+                        <% end %>
+                      </td>
+                    </tr>
+                  <% end %>
+                  </tbody>
+                <% end %>
+              <% end %>
+            </table>
+          <% end %>
