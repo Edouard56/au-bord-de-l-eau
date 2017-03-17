@@ -22,7 +22,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to root_path do %>
                 <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
               <% end %>
             </li>
@@ -44,6 +44,8 @@
 
     <!-- Button (call-to-action) -->
     <%= link_to "Register your boat", new_boat_path, class: "navbar-wagon-item navbar-fishing-buddy-button btn" %>
+
+
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

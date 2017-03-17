@@ -16,17 +16,34 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.accepted = "yes"
     @booking.save
-
-    redirect_to user_path
-
+    @boats = current_user.boats
+    @requests_on_my_boats = []
+    @boats.each do |boat|
+      boat.bookings.each do |booking|
+        @requests_on_my_boats << booking
+      end
+    end
+      respond_to do |format|
+        format.html { redirect_to user_path(current_user) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
   end
 
   def decline
     @booking = Booking.find(params[:id])
     @booking.accepted = "no"
     @booking.save
-
-    redirect_to user_path
+    @boats = current_user.boats
+    @requests_on_my_boats = []
+    @boats.each do |boat|
+      boat.bookings.each do |booking|
+        @requests_on_my_boats << booking
+      end
+    end
+      respond_to do |format|
+        format.html { redirect_to user_path(current_user) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
   end
 
   private
