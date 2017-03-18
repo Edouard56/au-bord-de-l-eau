@@ -9,9 +9,7 @@
       <p> <%= boat.name %> </p>
   </div>
     <div class="card-description">
-      <p>price : <%= boat.price_per_day %> €/day</p>
-      <p>Passengers : <%= boat.nb_of_passengers %> </p>
-      <p>Location : <%= boat.address %> </p>
+      <p>Lieu de l'action : <%= boat.address %> </p>
     </div>
   <%= link_to '', boat_path(boat), class: "card-link" %>
   </div>
