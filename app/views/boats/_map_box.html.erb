@@ -1,15 +1,14 @@
 
   <h3><%= boat.name %></h3>
-  <p><%= boat.description %></p>
+  <p><strong><%= boat.organizer %> </strong></p>
   <% if boat.photo? %>
     <%= cl_image_tag boat.photo.path, height: 100, width: 200, crop: :fill %>
     <% else %>
       <div class="card" style="background-image: linear-gradient(rgba(1,0,0,0.3), rgba(7,0,0,0.2)), url('<%= cl_image_path("fishing_boat_fdoghg") %>')">
     <% end %>
   <div class="box-container">
-    <p><strong>Location: </strong><%= boat.address %></p>
-    <p><strong>price per day: </strong><%= boat.price_per_day %> euros</p>
-    <p><strong>number of passengers accepted: </strong><%= boat.nb_of_passengers %> pax</p>
+    <p><strong>Lieu: </strong><%= boat.address %></p>
+    <p><strong>Quand ? </strong><%= boat.starts_at %></p>
   </div>
   <%= link_to '', boat_path(boat), class: "card-link" %>
 

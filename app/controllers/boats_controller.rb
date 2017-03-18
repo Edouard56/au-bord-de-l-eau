@@ -11,7 +11,7 @@ class BoatsController < ApplicationController
     if params[:search] == ""
       @boats = Boat.where.not(latitude: nil, longitude: nil)
     elsif params[:search]
-      @boats = Boat.near(params[:search], 200)
+      @boats = Boat.near(params[:search], 400)
     else
       @boats = Boat.where.not(latitude: nil, longitude: nil)
     end
@@ -48,6 +48,11 @@ class BoatsController < ApplicationController
   def show
     @booking = Booking.new
     @boat = Boat.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@boat) do |boat, marker|
+      marker.lat boat.latitude
+      marker.lng boat.longitude
+      marker.infowindow render_to_string(partial: "/boats/map_box", locals: { boat: boat })
+    end
   end
 
   def new
@@ -89,7 +94,18 @@ private
   end
 
   def boat_params
-    params.require(:boat).permit(:name, :address, :description, :price_per_day, :nb_of_passengers, :photo)
+    params.require(:boat).permit(
+      :name,
+      :organizer,
+      :starts_at,
+      :ends_at,
+      :address,
+      :street_address,
+      :zipcode,
+      :city,
+      :description,
+      :objectives,
+      :photo)
   end
 
 end

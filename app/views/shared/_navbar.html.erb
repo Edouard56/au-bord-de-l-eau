@@ -44,15 +44,17 @@
 
 
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
+    <span class="navbar-wagon-item navbar-wagon-link">
+      <%= link_to "Contact", contact_path %>
+    </span>
 
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Team</a>
+    <span class="navbar-wagon-item navbar-wagon-link">
+      <%= link_to "Le projet", le_projet_path %>
+    </span>
 
     <!-- Button (call-to-action) -->
     <%= link_to "Proposer une action", new_boat_path, class: "navbar-wagon-item navbar-fishing-buddy-button btn" %>
-
-
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
