@@ -6,7 +6,7 @@
       <h2>Vivre notre passion, choisir de la protéger</h2>
       <div class="banner-form" id="search-form">
         <%= form_tag(boats_path, method: :get) do %>
-          <%= text_field_tag :search, params[:search]%>
+          <%= text_field_tag :search, params[:search], placeholder: "Votre adresse"%>
           <%= submit_tag "Trouver les actions près de chez moi" , class: 'btn btn-treehouse' %>
         <% end %>
       </div>

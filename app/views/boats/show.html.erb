@@ -10,22 +10,21 @@
     </div>
   <% else %>
     <div class="banner" id="wrapper-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path("fishing_boat_fdoghg") %>')">
-            <div class="banner-content">
+      <div class="banner-content">
         <h1><%= @boat.name %></h1>
-        <h2><%= @boat.organizer %></h2>
       </div>
     </div>
   <% end %>
 </div>
 
-
-<div class="container text-center" id="info-container">
+<div class="container" id="info-container">
   <div class="row">
     <div class="col-xs-12 col-md-4">
-      <p>price : <%= @boat.price_per_day %> €/day</p>
+      <h3>L'organisateur de l'action</h3>
+      <p><%= @boat.organizer %> </p>
     </div>
     <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <p id="" >Passengers : <%= @boat.nb_of_passengers %> </p>
+      <p id="" >Passengers : <%= @boat.objectives %> </p>
     </div>
   </div>
       <p> <strong><%= @boat.description %> </strong> </p>
@@ -35,11 +34,33 @@
   <div class="row">
     <div class="col-xs-12 col-sm-2 col-sm-offset-2 btn btn-treehouse">
       <%= link_to "s'inscrire", boat_path(@boat),
-      #method: :delete,
+      method: :delete,
       data: { confirm: "Je confirme mon inscription !" } %>
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div id="map" style="width: 100%; height: 300px;"></div>
+  <% content_for(:after_js) do %>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function() {
+          markers = handler.addMarkers(<%= raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          if (markers.length == 0) {
+            handler.getMap().setZoom(2);
+          } else if (markers.length == 1) {
+            handler.getMap().setZoom(14);
+          }
+        });
+      });
+    </script>>
+  <% end %>
+</div>
+
 
 <!-- <div class="container date-form">
   <div class="text-center">
