@@ -11,7 +11,7 @@ class BoatsController < ApplicationController
     if params[:search] == ""
       @boats = Boat.where.not(latitude: nil, longitude: nil)
     elsif params[:search]
-      @boats = Boat.near(params[:search], 200)
+      @boats = Boat.near(params[:search], 400)
     else
       @boats = Boat.where.not(latitude: nil, longitude: nil)
     end

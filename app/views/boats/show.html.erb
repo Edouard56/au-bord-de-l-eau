@@ -19,26 +19,44 @@
 
 <div class="container" id="info-container">
   <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <h3>L'organisateur de l'action</h3>
-      <p><%= @boat.organizer %> </p>
-    </div>
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <p id="" >Passengers : <%= @boat.objectives %> </p>
+    <div class="col-xs-12">
+      <h3 class="text-center">L'organisateur de l'action</h3>
+      <p class="text-center"><%= @boat.organizer %> </p>
     </div>
   </div>
-      <p> <strong><%= @boat.description %> </strong> </p>
-</div>
-
-<div class="container text-center">
+  <br>
   <div class="row">
-    <div class="col-xs-12 col-sm-2 col-sm-offset-2 btn btn-treehouse">
+    <div class="col-xs-12 col-md-6">
+      <h3>Lieu de rendez-vous</h3>
+      <p><%= @boat.street_address %> </p>
+      <p><%= @boat.zipcode %> </p>
+      <p><%= @boat.city %> </p>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <h3>Quand ?</h3>
+      <p><%= @boat.starts_at %> </p>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <h3>Objectifs</h3>
+      <p><%= @boat.objectives %> </p>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <h3>Description</h3>
+      <p><%= @boat.description %> </p>
+    </div>
+  <div class="row">
+    <div class="col-xs-6 col-md-2 col-lg-2 btn btn-treehouse">
       <%= link_to "s'inscrire", boat_path(@boat),
       method: :delete,
-      data: { confirm: "Je confirme mon inscription !" } %>
+      data: { confirm: "Attention : efface l'action ! (pour les besoins de la demo)" } %>
     </div>
   </div>
-</div>
+
+<br>
+<br>
 
 <div class="container">
   <div id="map" style="width: 100%; height: 300px;"></div>
