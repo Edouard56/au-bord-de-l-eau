@@ -12,6 +12,7 @@
     <div class="banner" id="wrapper-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path("fishing_boat_fdoghg") %>')">
             <div class="banner-content">
         <h1><%= @boat.name %></h1>
+        <h2><%= @boat.organizer %></h2>
       </div>
     </div>
   <% end %>
@@ -30,7 +31,17 @@
       <p> <strong><%= @boat.description %> </strong> </p>
 </div>
 
-<div class="container date-form">
+<div class="container text-center">
+  <div class="row">
+    <div class="col-xs-12 col-sm-2 col-sm-offset-2 btn btn-treehouse">
+      <%= link_to "s'inscrire", boat_path(@boat),
+      #method: :delete,
+      data: { confirm: "Je confirme mon inscription !" } %>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container date-form">
   <div class="text-center">
     <%= simple_form_for([@boat, @booking]) do |f| %>
       <%= f.error_notification %>
@@ -44,19 +55,6 @@
     <% end %>
   </div>
 </div>
-<br>
-<br>
-<br>s
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4 btn btn-danger">
-      <%= link_to "Delete this boat", boat_path(@boat),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-    </div>
-  </div>
-</div>
-
+ -->
 
 

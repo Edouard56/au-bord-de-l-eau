@@ -5,12 +5,17 @@
 
       <%= simple_form_for (@boat) do |f| %>
         <%= f.input :name %>
+        <%= f.input :organizer %>
+        <%= f.input :starts_at %>
+        <%= f.input :ends_at %>
         <%= f.input :address %>
+        <%= f.input :street_address %>
+        <%= f.input :zipcode %>
+        <%= f.input :city %>
         <%= f.input :description %>
-        <%= f.input :price_per_day %>
-        <%= f.input :nb_of_passengers %>
+        <%= f.input :objectives %>
         <%= f.input :photo, as: :attachinary %>
-        <%= f.submit "Add your boat", class: "btn btn-primary" %>
+        <%= f.submit "Ajoutez une action", class: "btn btn-primary" %>
       <% end %>
 
     </div>
