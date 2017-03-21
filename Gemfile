@@ -23,6 +23,7 @@ source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
 
+#gem pour devise
 gem 'devise'
 
 #gem for attachinary
