@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get "/contact",          to: "pages#contact"
   get "/le_projet",          to: "pages#le_projet"
   get "/l_association",          to: "pages#l_association"
+  get "/le_site", to: "pages#le_site"
 end

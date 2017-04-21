@@ -1,77 +1,40 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
-  <% end %>
+  <ul class="list-inline">
+    <li>
+      <%= link_to root_path, class: "navbar-wagon-brand" do %>
+       <li><%= image_tag "christian-symbol.svg" %></li>
+      <% end %>
+    </li>
+    <li> <h5 class>Au bord de l'eau</h5> </li>
+    </ul>
+
+
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <!-- Different navigation if login or not -->
-    <% if user_signed_in? %>
-
-      <!-- Profile picture and dropdown -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to user_path(current_user) do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to root_path do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-    <% else %>
-
-      <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-    <% end %>
-
-
-    <!-- Contact Link -->
-    <span class="navbar-wagon-item navbar-wagon-link">
-      <%= link_to "Participer", contact_path %>
-    </span>
 
     <!-- Le projet link -->
     <span class="navbar-wagon-item navbar-wagon-link">
       <%= link_to "Le projet", le_projet_path %>
     </span>
 
-       <!-- L'association link -->
+      <!-- Le site link -->
     <span class="navbar-wagon-item navbar-wagon-link">
-      <%= link_to "Le futur site", l_association_path %>
+      <%= link_to "Le site", le_site_path %>
     </span>
 
-    <!-- Button (call-to-action) -->
-    <%= link_to "Proposer une action", new_boat_path, class: "navbar-wagon-item navbar-fishing-buddy-button btn" %>
+    <!-- L'association link -->
+    <span class="navbar-wagon-item navbar-wagon-link">
+      <%= link_to "L'association", l_association_path %>
+    </span>
+
+    <!-- Contact Link -->
+    <span class="navbar-wagon-item navbar-wagon-link">
+      <%= link_to "Nous rejoindre", contact_path %>
+    </span>
+
   </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
-    </div>
-  </div>
 </div>
 

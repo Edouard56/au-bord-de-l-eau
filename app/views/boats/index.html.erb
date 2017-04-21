@@ -1,76 +1,119 @@
 
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,1,3,0.2) 0%, rgba(123,2,1,0.2) 50%), url(<%= asset_path 'banner_photo.jpg' %>) ">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,1,3,0.2) 0%, rgba(123,2,1,0.4) 50%), url(<%= asset_path 'banner_photo.jpg' %>) ">
   <div class="banner-content">
     <h1>Au bord de l'eau</h1>
-    <h2>Vivre notre passion, choisir de la protéger</h2>
-    <div class="banner-form" id="search-form">
-      <%= form_tag(boats_path, method: :get) do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Votre adresse"%>
-        <%= submit_tag "Trouver les actions près de chez moi" , class: 'btn btn-treehouse' %>
-      <% end %>
-    </div>
+    <h2>Le réseau des pêcheurs et de leurs actions environnementales </h2>
   </div>
 </div>
 
 <div class="wrapper-grey">
+
   <div class="container">
-    <h2 class="text-center" id="title"> Les actions près de chez moi </h2>
-    <div id="boats">
-      <%= render 'boats_list', boats: @boats %>
-    </div>
-  </div>
-<br>
-  <div class="container">
-    <div id="map" style="width: 100%; height: 500px;">
-      <% content_for(:after_js) do %>
-      <script>
-        $(document).ready(function() {
-          var handler = Gmaps.build('Google');
-          handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
-            // handler.addMarker({
-            //   lat: <%= @search_lat %>,
-            //   lng: <%= @search_lng %>,
-            // })
-            markers = handler.addMarkers(<%= raw @hash.to_json %>);
-            handler.bounds.extendWith(markers);
-            handler.fitMapToBounds();
-            if (markers.length == 0) {
-              handler.getMap().setZoom(2);
-            } else if (markers.length == 1) {
-              handler.getMap().setZoom(13);
-            }
-          });
-        });
-        </script>
-      <% end %>
+    <h2 class="text-center" id="title"> Le projet</h2>
+    <div class="row">
+
+      <div class="col-xs-12 col-md-4">
+        <div class="card-text">
+          <h3 class="text-center">Notre objectif</h3>
+          <p class="text-justify">Créer un réseau social pour rassembler les pêcheurs autour de leur passion tout en les incitant à agir pour la préservation de leur cadre de loisir</p>
+          <%= link_to '', le_projet_path, class: "card-link" %>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-4">
+        <div class="card-text">
+          <h3 class="text-center">Notre vision</h3>
+          <p class="text-justify">Nous souhaitons organiser le projet autour d'une association loi 1901 composée de représentants d’associations, de fédérations, de pouvoirs publics et de pêcheurs...</p>
+          <%= link_to '', contact_path, class: "card-link" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="card-text">
+          <h3 class="text-center">Nous rejoindre</h3>
+          <p class="text-justify">Vous aimez l'idée. Vous voulez suivre notre projet, savoir qui nous sommes. Mieux, vous souhaitez nous aider. N'hésitez pas à nous contacter ou à nous suivre !</p>
+          <%= link_to '', contact_path, class: "card-link" %>
+        </div>
+      </div>
     </div>
   </div>
 
-<br>
-
   <div class="container">
-    <h2 class="text-center" id="title"> Au bord de l'eau en bref </h2>
-   <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <div class="card-text">
-        <h3 class="text-center">Engager</h3>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2 class="text-center" id="title"> Un site internet en deux parties </h2>
       </div>
     </div>
-     <div class="col-xs-12 col-md-4">
-      <div class="card-text">
-        <h3 class="text-center">Le projet</h3>
-        <%= link_to '', le_projet_path, class: "card-link" %>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <h3 class="text-center" id="title"> Un réseau social </h3>
+        <p class="text-justify">... permettant à chacun de partager sa passion (type Facebook mais dédié à la pêche), où l’on peut suivre les comptes de ses amis, publier des photos, créer des articles, des fiches techniques, des sorties entre amis... </p>
+        <div class="col-xs-12 col-md-6">
+          <div class="card-text">
+            <h3 class="text-center">Un forum & une messagerie</h3>
+            <p class="text-justify">Pour discuter avec ses amis</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="card-text">
+            <h3 class="text-center">Des amis et des groupes</h3>
+            <p class="text-justify">Pour préparer ses futures parties de pêche</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="card-text">
+            <h3 class="text-center">Un mur d'articles</h3>
+            <p class="text-justify">Pour suivre les infos</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="card-text">
+            <h3 class="text-center">Une partie événements </h3>
+            <p class="text-justify">Pour que la communauté vive ! </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6">
+        <h3 class="text-center" id="title"> Une plate-forme</h3>
+        <p class="text-justify">... permettant de créer des actions environnementales et trouver des ressources afin de les concrétiser : trouver des volontaires prêts à prêter main forte pour une action sur le terrain, créer un financement participatif...</p>
+        <div class="banner-form" id="search-form">
+          <%= form_tag(boats_path, method: :get) do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Votre adresse"%>
+            <%= submit_tag "Trouver les actions près de chez moi" , class: 'btn btn-treehouse' %>
+          <% end %>
+        </div>
+        <div id="boats">
+          <%= render 'boats_list', boats: @boats %>
+        </div>
+        <br>
+        <div id="map" style="width: 100%; height: 350px;">
+          <% content_for(:after_js) do %>
+          <script>
+            $(document).ready(function() {
+              var handler = Gmaps.build('Google');
+              handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
+                // handler.addMarker({
+                //   lat: <%= @search_lat %>,
+                //   lng: <%= @search_lng %>,
+                // })
+                markers = handler.addMarkers(<%= raw @hash.to_json %>);
+                handler.bounds.extendWith(markers);
+                handler.fitMapToBounds();
+                if (markers.length == 0) {
+                  handler.getMap().setZoom(2);
+                } else if (markers.length == 1) {
+                  handler.getMap().setZoom(13);
+                }
+              });
+            });
+            </script>
+          <% end %>
+        </div>
       </div>
     </div>
-     <div class="col-xs-12 col-md-4">
-       <div class="card-text">
-        <h3 class="text-center">Nous rejoindre</h3>
-        <%= link_to '', contact_path, class: "card-link" %>
-      </div>
-    </div>
-   </div>
   </div>
+
 </div>
 
 
