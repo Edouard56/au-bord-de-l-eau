@@ -15,105 +15,140 @@
 
       <div class="col-xs-12 col-md-4">
         <div class="card-text">
-          <h3 class="text-center">Notre objectif</h3>
-          <p class="text-justify">Créer un réseau social pour rassembler les pêcheurs autour de leur passion tout en les incitant à agir pour la préservation de leur cadre de loisir</p>
+          <div class="image-card">
+            <%= image_tag "fishermen_crop.jpg" %>
+          </div>
+          <h3 class="text-center">Le projet</h3>
+          <p class="text-justify">Créer un <strong>site internet</strong> composé :</p>
+          <ul>
+            <li>D'un <strong>réseau social</strong> pour rassembler les pêcheurs autour de leur passion.</li>
+            <br>
+            <li>D'une <strong>plate_forme d'actions environnementales</strong> pour les inciter à préserver leur cadre de loisir.</li>
+          </ul>
           <%= link_to '', le_projet_path, class: "card-link" %>
         </div>
       </div>
 
       <div class="col-xs-12 col-md-4">
         <div class="card-text">
-          <h3 class="text-center">Notre vision</h3>
-          <p class="text-justify">Nous souhaitons organiser le projet autour d'une association loi 1901 composée de représentants d’associations, de fédérations, de pouvoirs publics et de pêcheurs...</p>
+          <br><br>
+          <div class="image-card">
+            <%= image_tag "logo1901.gif" %>
+          </div>
+          <h3 class="text-center">L'organisation</h3>
+          <p class="text-justify">Un site administré par une <strong>association loi 1901</strong> :</p>
+          <ul>
+            <li>garantissant la <strong>représentativité</strong> de tous les acteurs (assos, pouvoirs publics, pêcheurs)</li>
+            <br>
+            <li>à <strong>but non lucratif</strong>.</li>
+          </ul>
           <%= link_to '', contact_path, class: "card-link" %>
         </div>
       </div>
       <div class="col-xs-12 col-md-4">
         <div class="card-text">
-          <h3 class="text-center">Nous rejoindre</h3>
-          <p class="text-justify">Vous aimez l'idée. Vous voulez suivre notre projet, savoir qui nous sommes. Mieux, vous souhaitez nous aider. N'hésitez pas à nous contacter ou à nous suivre !</p>
+          <div class="image-card">
+            <%= image_tag "nous-rejoindre_crop.png" %>
+          </div>
+          <h3 class="text-center">La vision</h3>
+          <p class="text-justify">Côté pêcheur :</p>
+          <ul>
+            <li><strong>prise de conscience</strong></li>
+            <li>donner les moyens de la transformer en un <strong>engagement concret</strong></li>
+          </ul>
+          <p class="text-justify">Pour les porteurs de projets :
+          <ul>
+            <li>trouver des ressources nouvelles</li>
+            <li>améliorer la communication de leurs actions</li>
+          </ul>
           <%= link_to '', contact_path, class: "card-link" %>
         </div>
       </div>
     </div>
   </div>
+</div>
 
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h2 class="text-center" id="title"> Un site internet en deux parties </h2>
+        <br><br>
+        <h2 class="text-center" id="title"> Un site internet composé deux volets </h2>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        <h3 class="text-center" id="title"> Un réseau social </h3>
-        <p class="text-justify">... permettant à chacun de partager sa passion (type Facebook mais dédié à la pêche), où l’on peut suivre les comptes de ses amis, publier des photos, créer des articles, des fiches techniques, des sorties entre amis... </p>
-        <div class="col-xs-12 col-md-6">
-          <div class="card-text">
-            <h3 class="text-center">Un forum & une messagerie</h3>
-            <p class="text-justify">Pour discuter avec ses amis</p>
+        <div class="presentation-site-card">
+          <h3 class="text-center" id="title"> Un réseau social </h3>
+          <p class="text-justify">... permettant à chacun de partager sa passion (type Facebook mais dédié à la pêche), où l’on peut suivre les comptes de ses amis, publier des photos, créer des articles, des fiches techniques, des sorties entre amis... </p>
+          <div class="col-xs-12 col-md-6">
+            <div class="card-text">
+              <h3 class="text-center">Un forum & une messagerie</h3>
+              <p class="text-justify">Pour discuter avec ses amis</p>
+            </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-md-6">
-          <div class="card-text">
-            <h3 class="text-center">Des amis et des groupes</h3>
-            <p class="text-justify">Pour préparer ses futures parties de pêche</p>
+          <div class="col-xs-12 col-md-6">
+            <div class="card-text">
+              <h3 class="text-center">Des amis et des groupes</h3>
+              <p class="text-justify">Pour préparer ses futures parties de pêche</p>
+            </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-md-6">
-          <div class="card-text">
-            <h3 class="text-center">Un mur d'articles</h3>
-            <p class="text-justify">Pour suivre les infos</p>
+          <div class="col-xs-12 col-md-6">
+            <div class="card-text">
+              <h3 class="text-center">Un mur d'articles</h3>
+              <p class="text-justify">Pour suivre les infos</p>
+            </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-md-6">
-          <div class="card-text">
-            <h3 class="text-center">Une partie événements </h3>
-            <p class="text-justify">Pour que la communauté vive ! </p>
+          <div class="col-xs-12 col-md-6">
+            <div class="card-text">
+              <h3 class="text-center">Une partie événements </h3>
+              <p class="text-justify">Pour que la communauté vive ! </p>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="col-xs-12 col-md-6">
-        <h3 class="text-center" id="title"> Une plate-forme</h3>
-        <p class="text-justify">... permettant de créer des actions environnementales et trouver des ressources afin de les concrétiser : trouver des volontaires prêts à prêter main forte pour une action sur le terrain, créer un financement participatif...</p>
-        <div class="banner-form" id="search-form">
-          <%= form_tag(boats_path, method: :get) do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Votre adresse"%>
-            <%= submit_tag "Trouver les actions près de chez moi" , class: 'btn btn-treehouse' %>
-          <% end %>
-        </div>
-        <div id="boats">
-          <%= render 'boats_list', boats: @boats %>
-        </div>
-        <br>
-        <div id="map" style="width: 100%; height: 350px;">
-          <% content_for(:after_js) do %>
-          <script>
-            $(document).ready(function() {
-              var handler = Gmaps.build('Google');
-              handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
-                // handler.addMarker({
-                //   lat: <%= @search_lat %>,
-                //   lng: <%= @search_lng %>,
-                // })
-                markers = handler.addMarkers(<%= raw @hash.to_json %>);
-                handler.bounds.extendWith(markers);
-                handler.fitMapToBounds();
-                if (markers.length == 0) {
-                  handler.getMap().setZoom(2);
-                } else if (markers.length == 1) {
-                  handler.getMap().setZoom(13);
-                }
+        <div class="presentation-site-card">
+          <h3 class="text-center" id="title"> Une plate-forme</h3>
+          <p class="text-justify">... permettant de créer des actions environnementales et trouver des ressources afin de les concrétiser : trouver des volontaires prêts à prêter main forte pour une action sur le terrain, créer un financement participatif...</p>
+          <div class="banner-form" id="search-form">
+            <%= form_tag(boats_path, method: :get) do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Votre adresse"%>
+              <%= submit_tag "Trouver les actions près de chez moi" , class: 'btn btn-treehouse' %>
+            <% end %>
+          </div>
+          <div id="boats">
+            <%= render 'boats_list', boats: @boats %>
+          </div>
+          <br>
+          <div id="map" style="width: 100%; height: 350px;">
+            <% content_for(:after_js) do %>
+            <script>
+              $(document).ready(function() {
+                var handler = Gmaps.build('Google');
+                handler.buildMap({ provider: { scrollwheel: false, zoomControl: true }, internal: { id: 'map' } }, function() {
+                  // handler.addMarker({
+                  //   lat: <%= @search_lat %>,
+                  //   lng: <%= @search_lng %>,
+                  // })
+                  markers = handler.addMarkers(<%= raw @hash.to_json %>);
+                  handler.bounds.extendWith(markers);
+                  handler.fitMapToBounds();
+                  if (markers.length == 0) {
+                    handler.getMap().setZoom(2);
+                  } else if (markers.length == 1) {
+                    handler.getMap().setZoom(13);
+                  }
+                });
               });
-            });
-            </script>
-          <% end %>
+              </script>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-</div>
+
 
 

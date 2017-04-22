@@ -3,31 +3,31 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
-.container {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
+// .container {
+//     margin-right: auto;
+//     margin-left: auto;
+//     padding-left: 15px;
+//     padding-right: 15px;
+// }
 
 
 
-.btn-treehouse {
-  color: white;
-  height: 35px;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: #3079ab;
-  transition: background 0.3s ease;
-}
-.btn-treehouse:hover {
-  opacity: 1;
-  border-color: #1f5768;
-  background: #1f5768;
-  text-decoration: none;
-  color: white;
-}
+// .btn-treehouse {
+//   color: white;
+//   height: 35px;
+//   padding: 5px 10px;
+//   border-radius: 4px;
+//   font-weight: bold;
+//   background: #3079ab;
+//   transition: background 0.3s ease;
+// }
+// .btn-treehouse:hover {
+//   opacity: 1;
+//   border-color: #1f5768;
+//   background: #1f5768;
+//   text-decoration: none;
+//   color: white;
+// }
 
 
 #search {
@@ -57,3 +57,13 @@
   padding-right: 15px;
 }
 
+.image-card {
+  text-align: center;
+  height: 20%;
+  margin-bottom: 20px;
+}
+
+.presentation-site-card {
+  background-color: #f7f2f2;
+  padding: 10px;
+}
