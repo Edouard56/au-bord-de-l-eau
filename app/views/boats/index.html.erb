@@ -8,7 +8,6 @@
 </div>
 
 <div class="wrapper-grey">
-
   <div class="container">
     <h2 class="text-center" id="title"> Le projet</h2>
     <div class="row">
@@ -38,7 +37,7 @@
           <h3 class="text-center">L'organisation</h3>
           <p class="text-justify">Un site administré par une <strong>association loi 1901</strong> :</p>
           <ul>
-            <li>garantissant la <strong>représentativité</strong> de tous les acteurs (assos, pouvoirs publics, pêcheurs)</li>
+            <li>où <strong>l'ensemble des acteurs</strong> seraient représentés (associations, pouvoirs publics, pêcheurs)</li>
             <br>
             <li>à <strong>but non lucratif</strong>.</li>
             <br>
@@ -73,47 +72,70 @@
     <div class="row">
       <div class="col-xs-12">
         <br><br>
-        <h2 class="text-center" id="title"> Un site internet composé deux volets </h2>
+        <h2 class="text-center" id="title"> Un site internet composé de deux volets : </h2>
         <br>
       </div>
     </div>
+  </div>
+
+<div class="wrapper-blue">
+  <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <div class="presentation-site-card">
-          <h3 class="text-center" id="title"> Un réseau social </h3>
+      <div class="col-xs-12">
+        <div class="social-media-card">
+          <h3 class="text-center" id="title"> 1. un réseau social </h3>
           <p class="text-justify">... permettant à chacun de partager sa passion (type Facebook mais dédié à la pêche), où l’on peut suivre les comptes de ses amis, publier des photos, créer des articles, des fiches techniques, des sorties entre amis... </p>
-          <div class="col-xs-12 col-md-6">
-            <div class="presentation-site-card">
-              <div class="card-text">
-                <h3 class="text-center">Un forum & une messagerie</h3>
-                <p class="text-justify">Pour discuter avec ses amis</p>
-              </div>
+
+        </div>
+      </div>
+    </div>
+          <h3 class="text-center" id="title"> Visuel maquette </h3>
+          <div class="image-site">
+            <%= image_tag "boat4.jpg" %>
+          </div>
+
+          <h3 class="text-center" id="title"> Fonctionnalités </h3>
+          <div class="col-xs-12 col-md-3">
+            <div class="card-text">
+              <h3 class="text-center">Un forum & une messagerie</h3>
+              <p class="text-justify">Pour discuter avec ses amis</p>
             </div>
           </div>
-          <div class="col-xs-12 col-md-6">
+
+          <div class="col-xs-12 col-md-3">
             <div class="card-text">
               <h3 class="text-center">Des amis et des groupes</h3>
               <p class="text-justify">Pour préparer ses futures parties de pêche</p>
             </div>
           </div>
-          <div class="col-xs-12 col-md-6">
+
+          <div class="col-xs-12 col-md-3">
             <div class="card-text">
               <h3 class="text-center">Un mur d'articles</h3>
               <p class="text-justify">Pour suivre les infos</p>
             </div>
           </div>
-          <div class="col-xs-12 col-md-6">
+
+          <div class="col-xs-12 col-md-3">
             <div class="card-text">
               <h3 class="text-center">Une partie événements </h3>
               <p class="text-justify">Pour que la communauté vive ! </p>
             </div>
           </div>
+
         </div>
       </div>
+  </div>
+</div>
 
-      <div class="col-xs-12 col-md-6">
+<br><br>
+
+<div class="wrapper-green">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
         <div class="presentation-site-card">
-          <h3 class="text-center" id="title"> Une plate-forme</h3>
+          <h3 class="text-center" id="title"> 2. une plate-forme</h3>
           <p class="text-justify">... permettant de créer des actions environnementales et trouver des ressources afin de les concrétiser :</p>
           <ul>
             <li>trouver des volontaires prêts à prêter main forte pour une action sur le terrain</li>
@@ -125,6 +147,10 @@
             <li>...</li>
           </ul>
           <br>
+          <h3 class="text-center" id="title"> Visuel maquette</h3>
+            <div class="image-site">
+            <%= image_tag "boat3.jpg" %>
+          </div>
           <h3 class="text-center" id="title"> Un module de recherche</h3>
           <div class="banner-form" id="search-form">
             <%= form_tag(boats_path, method: :get) do %>
@@ -165,7 +191,7 @@
       </div>
     </div>
   </div>
-
+</div>
 
 
 
