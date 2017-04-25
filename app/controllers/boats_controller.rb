@@ -51,7 +51,8 @@ class BoatsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@boat) do |boat, marker|
       marker.lat boat.latitude
       marker.lng boat.longitude
-      marker.infowindow render_to_string(partial: "/boats/map_box", locals: { boat: boat })
+      marker.inf
+      owindow render_to_string(partial: "/boats/map_box", locals: { boat: boat })
     end
   end
 
