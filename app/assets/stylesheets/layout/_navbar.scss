@@ -24,11 +24,25 @@
   width: 50px;
 }
 
+.title-navbar {
+  font-size: 20px;
+  color:green;
+}
+
+.ul-navbar {
+  margin-bottom: -10px;
+}
+
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: green;
+}
+
+.navbar-link {
+  color: green;
 }
 
 /* Navbar item */
@@ -40,7 +54,6 @@
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: #616668;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
