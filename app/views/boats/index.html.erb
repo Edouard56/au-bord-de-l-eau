@@ -45,8 +45,10 @@
           <%= link_to '', contact_path, class: "card-link" %>
         </div>
       </div>
+
       <div class="col-xs-12 col-md-4">
         <div class="card-text">
+        <br>
           <div class="image-card">
             <%= image_tag "nous-rejoindre_crop.png" %>
           </div>
@@ -78,80 +80,80 @@
     </div>
   </div>
 
-<div class="wrapper-blue">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="social-media-card">
-          <h3 class="text-center" id="title"> 1. un réseau social </h3>
-          <p class="text-justify">... permettant à chacun de partager sa passion (type Facebook mais dédié à la pêche), où l’on peut suivre les comptes de ses amis, publier des photos, créer des articles, des fiches techniques, des sorties entre amis... </p>
 
+  <div class="container">
+    <div class="text-volets">
+      <div class="row">
+
+        <div class="col-xs-12">
+          <div class="social-media-card">
+            <h3 class="text-center" id="title"> 1. un réseau social </h3>
+            <p class="text-justify">... permettant à chacun de partager sa passion (type Facebook mais dédié à la pêche), où l’on peut suivre les comptes de ses amis, publier des photos, créer des articles, des fiches techniques, des sorties entre amis... </p>
+          </div>
+          <div class="image-site">
+            <%= image_tag "fishermen.jpg" %>
+          </div>
         </div>
+
+        <h3 class="text-center" id="title"> Fonctionnalités </h3>
+        <div class="col-xs-12 col-md-3">
+          <div class="card-text">
+            <h3 class="text-center">Un forum & une messagerie</h3>
+            <p class="text-justify">Pour discuter avec ses amis</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-3">
+          <div class="card-text">
+            <h3 class="text-center">Des amis et des groupes</h3>
+            <p class="text-justify">Pour préparer ses futures parties de pêche</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-3">
+          <div class="card-text">
+            <h3 class="text-center">Un mur d'articles</h3>
+            <p class="text-justify">Pour suivre les infos</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-3">
+          <div class="card-text">
+            <h3 class="text-center">Une partie événements </h3>
+            <p class="text-justify">Pour que la communauté vive ! </p>
+          </div>
+        </div>
+
       </div>
     </div>
-          <h3 class="text-center" id="title"> Visuel maquette </h3>
-          <div class="image-site">
-            <%= image_tag "boat4.jpg" %>
-          </div>
-
-          <h3 class="text-center" id="title"> Fonctionnalités </h3>
-          <div class="col-xs-12 col-md-3">
-            <div class="card-text">
-              <h3 class="text-center">Un forum & une messagerie</h3>
-              <p class="text-justify">Pour discuter avec ses amis</p>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-md-3">
-            <div class="card-text">
-              <h3 class="text-center">Des amis et des groupes</h3>
-              <p class="text-justify">Pour préparer ses futures parties de pêche</p>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-md-3">
-            <div class="card-text">
-              <h3 class="text-center">Un mur d'articles</h3>
-              <p class="text-justify">Pour suivre les infos</p>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-md-3">
-            <div class="card-text">
-              <h3 class="text-center">Une partie événements </h3>
-              <p class="text-justify">Pour que la communauté vive ! </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
   </div>
-</div>
 
 <br><br>
 
-<div class="wrapper-green">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-12">
-        <div class="presentation-site-card">
-          <h3 class="text-center" id="title"> 2. une plate-forme</h3>
-          <p class="text-justify">... permettant de créer des actions environnementales et trouver des ressources afin de les concrétiser :</p>
-          <ul>
-            <li>trouver des volontaires prêts à prêter main forte pour une action sur le terrain</li>
+    <div class="text-volets">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <div class="presentation-site-card">
+            <h3 class="text-center" id="title"> 2. une plate-forme</h3>
+            <p class="text-justify">... permettant de créer des actions environnementales et trouver des ressources afin de les concrétiser :</p>
             <br>
-            <li>communiquer sur les actions</li>
+            <ul>
+              <li>trouver des volontaires prêts à prêter main forte pour une action sur le terrain</li>
+              <br>
+              <li>communiquer sur les actions</li>
+              <br>
+              <li>créer un financement participatif</li>
+              <br>
+              <li>...</li>
+            </ul>
             <br>
-            <li>créer un financement participatif</li>
-            <br>
-            <li>...</li>
-          </ul>
-          <br>
-          <h3 class="text-center" id="title"> Visuel maquette</h3>
             <div class="image-site">
-            <%= image_tag "boat3.jpg" %>
+              <%= image_tag "nettoyage.jpg" %>
+            </div>
           </div>
-          <h3 class="text-center" id="title"> Un module de recherche</h3>
+
+          <h4 class="text-center" id="title"> Un module de recherche permettant d'accéder aux différentes actions</h4>
           <div class="banner-form" id="search-form">
             <%= form_tag(boats_path, method: :get) do %>
               <%= text_field_tag :search, params[:search], placeholder: "Votre adresse"%>
@@ -159,7 +161,6 @@
             <% end %>
           </div>
           <br>
-          <h3 class="text-center" id="title"> Un accès aux différentes actions</h3>
           <div id="boats">
             <%= render 'boats_list', boats: @boats %>
           </div>
@@ -191,7 +192,7 @@
       </div>
     </div>
   </div>
-</div>
+
 
 
 
