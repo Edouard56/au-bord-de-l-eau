@@ -68,6 +68,10 @@
   font-size: 14px;
 }
 
+.card-text p {
+  line-height: 200%;
+  font-size: 15px;
+}
 
 .image-card {
   text-align: center;
@@ -108,7 +112,7 @@
 
 .text-volets {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   border: 1px solid #e0d5d5;
   background: white;
   box-shadow: 10px;
@@ -117,4 +121,14 @@
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 20px;
+
+  p {
+    line-height: 200%;
+    font-size: 15px;
+  }
+
+  li {
+    line-height: 200%;
+    font-size: 15px;
+  }
 }

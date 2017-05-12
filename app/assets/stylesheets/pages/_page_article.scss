@@ -24,16 +24,53 @@
     font-size: 14px;
   }
 
-
 }
 
 .title-page {
   font-size: 30px;
   color:green;
   margin-bottom: 20px;
+  margin-top: 40px;
 }
 .title-text {
   color: blue;
   margin-top: 40px;
   text-align: center;
+}
+
+.title-text-carrousel {
+  color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 80%;
+}
+
+
+//contact
+
+.bg-twitter {
+  background: #00a3e1;
+}
+.bg-facebook {
+  background: #3b5998;
+}
+
+.share-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.share-link {
+  width: 300px;
+  flex: 0 0 24%;
+  color: white;
+  font-size: 18px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  &:hover {
+    color: white;
+  }
 }
