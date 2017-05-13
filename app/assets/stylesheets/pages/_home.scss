@@ -1,34 +1,10 @@
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
-
-// .container {
-//     margin-right: auto;
-//     margin-left: auto;
-//     padding-left: 15px;
-//     padding-right: 15px;
-// }
-
-
-
-// .btn-treehouse {
-//   color: white;
-//   height: 35px;
-//   padding: 5px 10px;
-//   border-radius: 4px;
-//   font-weight: bold;
-//   background: #3079ab;
-//   transition: background 0.3s ease;
-// }
-// .btn-treehouse:hover {
-//   opacity: 1;
-//   border-color: #1f5768;
-//   background: #1f5768;
-//   text-decoration: none;
-//   color: white;
-// }
-
+.social-media-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+}
 
 #search {
     color: black;
@@ -45,10 +21,10 @@
 }
 
 .card-text {
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 20px;
   border: 1px solid #e0d5d5;
-  padding: 30px 10px;
+  padding: 10px 10px;
   background: white;
   box-shadow: 10px;
   border-radius: 20px;
@@ -69,13 +45,12 @@
 }
 
 .card-text p {
-  line-height: 200%;
-  font-size: 15px;
+  line-height: 150%;
+  font-size: 14px;
 }
 
 .image-card {
   text-align: center;
-  height: 18%;
   margin-bottom: 30px;
 }
 
@@ -131,4 +106,40 @@
     line-height: 200%;
     font-size: 15px;
   }
+}
+
+.social-network-volets {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  border: 1px solid #e0d5d5;
+  background: white;
+  box-shadow: 10px;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+
+  h4 {
+    margin-top: 40px;
+  }
+
+  p {
+    line-height: 150%;
+    font-size: 14px;
+  }
+
+  li {
+    line-height: 150%;
+    font-size: 14px;
+  }
+
+  .card-text h5 {
+  font-size: 16px;
+  // font-weight: lighter;
+  color: blue;
+  margin-bottom: 15px;
+  line-height: 150%;
+}
+
 }

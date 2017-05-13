@@ -7,6 +7,8 @@
   </div>
 </div>
 
+
+
   <div class="container">
     <div class="text-volets">
       <div class="row">
@@ -14,17 +16,11 @@
           <br><br>
           <h2 class="text-center" id="title"> Le projet en quelques lignes </h2>
           <div class="social-media-card">
-            <p class="text-justify"> Au bord de l'eau est un projet de site Internet pour <strong>rassembler les pêcheurs autour de leur passion</strong> tout en participant à <strong> la préservation des environnements</strong> où elle se pratique.</p>
-            <p> Nous souhaitons créer ce projet au sein d'une association qui réunisse l'ensemble des acteurs concernés (fédérations, appmas, ministère..).</p>
-            <p>Le projet est né du constat que la communauté des pêcheurs reste le premier loisir de France mais auss une formidable opportunité pour protéger la nature et faire passer le message aux plus jeunes car loisir partagé par jeunes et vieux.</p>
-            <p><strong>Nos objectifs</strong></p>
-            <ul>
-              <li><strong>Concrétiser l'engagement des pêcheurs en actions</strong></li>
-              <br>
-              <li>Permettre aux associations/fédérations de s'appuyer sur de nouvelles ressources </li>
-              <br>
-              <li>Sensibiliser le grand public</li>
-            </ul>
+            <p class="text-justify"> <p>"Au bord de l'eau" est né d'une frustration, celle de ne pas pouvoir accéder et suivre les différentes actions environnementales menées par les acteurs de la pêche de loisir en France.</p>
+            <p class="text-justify">"Au bord de l'eau" est un projet de site Internet pour <strong>rassembler les pêcheurs autour de leur passion</strong> tout en participant à <strong> la préservation des environnements</strong> où elle se pratique.</p>
+            <p class="text-justify"> Nous souhaitons créer ce projet au sein d'une association qui réunisse l'ensemble des acteurs concernés (fédérations, appmas, ministère..).</p>
+            <p class="text-justify">Nos objectifs sont de favoriser l'engagement des pêcheurs envers la préservation de l'environnement et de permettre aux associations/fédérations de s'appuyer sur de nouvelles ressources.</p>
+            <%= link_to 'En savoir plus', le_projet_path %>
           </div>
         </div>
       </div>
@@ -34,7 +30,7 @@
 
 <div class="wrapper-grey">
   <div class="container">
-    <h2 class="text-center" id="title"> Un site, une asso, une équipe</h2>
+    <!-- <h2 class="text-center" id="title"> L'associatif à l'ère collaborative </h2> -->
     <div class="row">
 
       <div class="col-xs-12 col-md-4">
@@ -47,9 +43,9 @@
           <ul>
             <li>d'un <strong>réseau social</strong> pour rassembler les pêcheurs autour de leur passion.</li>
             <br>
-            <li>d'une <strong>plate-forme d'actions environnementales collaboratives</strong> pour les inciter à préserver leur cadre de loisir.</li>
+            <li>d'une <strong>plate-forme</strong> où les acteurs (fédérations, appmas...) pourront mettre en ligne leurs actions.</li>
           </ul>
-          <%= link_to '', le_projet_path, class: "card-link" %>
+          <%= link_to '', le_site_path, class: "card-link" %>
         </div>
       </div>
 
@@ -62,12 +58,12 @@
           <h3 class="text-center">L'association</h3>
           <p class="text-justify">Un site administré par une <strong>association loi 1901</strong> :</p>
           <ul>
-            <li>où <strong>l'ensemble des acteurs</strong> seraient représentés (associations, pouvoirs publics, pêcheurs)</li>
+            <li>composée d'<strong> acteurs représentatifs</strong> (appmas, fédérations, pouvoirs publics...)</li>
             <br>
             <li>à <strong>but non lucratif</strong>.</li>
             <br>
           </ul>
-          <%= link_to '', contact_path, class: "card-link" %>
+          <%= link_to '', l_association_path, class: "card-link" %>
         </div>
       </div>
 
@@ -78,14 +74,42 @@
             <%= image_tag "nous-rejoindre_crop.png" %>
           </div>
           <h3 class="text-center">Nous rejoindre</h3>
-          <p class="text-justify">Nous sommes actuellement en phase de définition du projet. Vous pouvez nous aider en :</p>
+          <p class="text-justify">Aidez nous à faire du projet un succès :</p>
           <ul>
-            <li><strong>en relayant le projet sur les réseaux</strong></li>
-            <li>nous mettant en relation avec des acteurs </li>
-            <li>nous conseillant</li>
-            <li>nous rejoignant </li>
+            <li>en <strong>relayant le projet</strong> sur les réseaux sociaux</li>
+            <br>
+            <li>en rejoignant ou en aidant<strong>l'association</strong></li>
+            <br>
+            <li>en devenant notre <strong>relais local</strong></li>
           </ul>
           <%= link_to '', contact_path, class: "card-link" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  <div class="container">
+    <div class="text-volets">
+      <div class="row">
+        <div class="col-xs-12">
+          <br><br>
+          <h2 class="text-center" id="title"> Suivez nous ! </h2>
+          <div class="social-media-container">
+            <div class="fb-page"
+              data-href="https://www.facebook.com/auborddeleau.org/"
+              data-width="340"
+              data-hide-cover="false"
+              data-show-facepile="true">
+            </div>
+            <a class="twitter-follow-button"
+              href="https://twitter.com/au_bord_deleau">
+              Follow @au_bord_deleau
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -103,79 +127,156 @@
   </div>
 
 
+
   <div class="container">
-    <div class="text-volets">
+    <div class="social-network-volets">
       <div class="row">
 
         <div class="col-xs-12">
           <div class="social-media-card">
-            <h3 class="text-center" id="title"> 1. un réseau social </h3>
-            <p class="text-justify">... permettant à chacun de partager sa passion (type Facebook mais dédié à la pêche), où l’on peut suivre les comptes de ses amis, publier des photos, créer des articles, des fiches techniques, des sorties entre amis... </p>
+            <h3 class="text-center" id="title"> Un réseau social </h3>
           </div>
           <div class="image-site">
-            <%= image_tag "fishermen.jpg" %>
+            <%= image_tag "fishermen_margin_crop.jpg" %>
           </div>
-        </div>
-
-        <h3 class="text-center" id="title"> Fonctionnalités </h3>
-        <div class="col-xs-12 col-md-3">
-          <div class="card-text">
-            <h3 class="text-center">Un forum & une messagerie</h3>
-            <p class="text-justify">Pour discuter avec ses amis</p>
-          </div>
+          <h4 class="text-center" id="title"> Fonctionnalités pour les pêcheurs </h4>
         </div>
 
         <div class="col-xs-12 col-md-3">
           <div class="card-text">
-            <h3 class="text-center">Des amis et des groupes</h3>
-            <p class="text-justify">Pour préparer ses futures parties de pêche</p>
+            <h5 class="text-center">Une partie fil d'actualités</h5>
+            <p class="text-justify">Pour poster un article issue d'un média ou suivre le compte-rendu de pêche d'un ami.</p>
           </div>
         </div>
 
         <div class="col-xs-12 col-md-3">
           <div class="card-text">
-            <h3 class="text-center">Un mur d'articles</h3>
-            <p class="text-justify">Pour suivre les infos</p>
+            <h5 class="text-center">Un forum et une messagerie</h5>
+            <p class="text-justify">Afin de trouver les bonnes infos, discuter météo, trouver la bonne affaire ou contacter quelqu'un.</p>
           </div>
         </div>
 
         <div class="col-xs-12 col-md-3">
           <div class="card-text">
-            <h3 class="text-center">Une partie événements </h3>
-            <p class="text-justify">Pour que la communauté vive ! </p>
+            <h5 class="text-center">Suivre ses amis ou ses groupes préférés</h5>
+            <p class="text-justify">Pour se constituer un groupe d'amis avec qui aller pêcher et suivre ses groupes préférés.</p>
           </div>
         </div>
+
+
+        <div class="col-xs-12 col-md-3">
+          <div class="card-text">
+            <h5 class="text-center">Une partie événements </h5>
+            <p class="text-justify">Pour créer ses propres sorties de pêche ou aller filer un coup de main à une appma ! </p>
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="social-media-card">
+            <h4 class="text-center" id="title"> Fonctionnalités pour les porteurs d'actions</h4>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <div class="card-text">
+            <h5 class="text-center">Une partie réservée aux actions environnementales</h5>
+            <p class="text-justify">remplacer les encarts habituellement dédiés aux publicités commerciales par les actions environnementales.</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <div class="card-text">
+            <h5 class="text-center">Une présence dans le fil d'actualités</h5>
+            <p class="text-justify">Les actions mises en ligne apparaissent dans les fils d'actualités des membres du réseau.</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <div class="card-text">
+            <h5 class="text-center">Une page spécifique aux acteurs</h5>
+            <p class="text-justify">Les acteurs auront une page dédiée qui sera la même pour le réseau social et pour la partie plate-forme.</p>
+          </div>
+        </div>
+
+
 
       </div>
     </div>
   </div>
 
-<br><br>
 
   <div class="container">
-    <div class="text-volets">
+    <div class="social-network-volets">
+      <div class="row">
+
+        <div class="col-xs-12 col-md-12">
+          <div class="social-media-card">
+            <h3 class="text-center" id="title"> Une plate-forme d'actions environnementales</h3>
+          </div>
+          <div class="social-media-card">
+            <h4 class="text-center" id="title"> Fonctionnalités pour les porteurs d'actions</h4>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <div class="card-text">
+            <h5 class="text-center">Création d'événements</h5>
+            <p class="text-justify">permet aux porteurs d'actions de créer les évéments qu'ils souhaitent en indiquant les différentes spécifités de l'action.</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <div class="card-text">
+            <h5 class="text-center">Un module de financement participatif</h5>
+            <p class="text-justify">Pour se constituer un groupe d'amis avec qui aller pêcher et suivre ses groupes préférés.</p>
+          </div>
+        </div>
+
+
+        <div class="col-xs-12 col-md-4">
+          <div class="card-text">
+            <h5 class="text-center">Une partie privée réservée aux acteurs </h5>
+            <p class="text-justify">Une place de marché pour échanger du matériel et un forum pour échanger des conseils et des études</p>
+          </div>
+          <br>
+        </div>
+
+      </div>
+
       <div class="row">
         <div class="col-xs-12 col-md-12">
-          <div class="presentation-site-card">
-            <h3 class="text-center" id="title"> 2. une plate-forme d'actions environnementales</h3>
-            <p class="text-justify">... permettant de créer des actions environnementales et trouver des ressources afin de les concrétiser :</p>
-            <br>
-            <ul>
-              <li>trouver des volontaires prêts à prêter main forte pour une action sur le terrain</li>
-              <br>
-              <li>communiquer sur les actions</li>
-              <br>
-              <li>créer un financement participatif</li>
-              <br>
-              <li>...</li>
-            </ul>
-            <br>
-            <div class="image-site">
-              <%= image_tag "nettoyage.jpg" %>
-            </div>
+          <div class="social-media-card">
+            <h4 class="text-center" id="title"> Fonctionnalités pour les pêcheurs </h4>
           </div>
+        </div>
 
-          <h4 class="text-center" id="title"> Un module de recherche permettant d'accéder aux différentes actions</h4>
+        <div class="col-xs-12 col-md-4">
+          <div class="card-text">
+            <h5 class="text-center">Un module de recherche</h5>
+            <p class="text-justify">permet d'accéder aux différentes actions en fonction des filtres choisis (proximité, type d'actions...).</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <div class="card-text">
+            <h5 class="text-center">Une inscription facilitée</h5>
+            <p class="text-justify">Une procédure simplifiée pour s'inscrire aux événements (ouverte/sous conditions..).</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <div class="card-text">
+            <h5 class="text-center">Un système de récompense</h5>
+            <p class="text-justify">Chaque action permet d'engranger des points avec un concours à la clé auprès de toute la communauté. </p>
+          </div>
+          <br>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h4 class="text-center" id="title"> Exemple de module de recherche</h4>
           <div class="banner-form" id="search-form">
             <%= form_tag(boats_path, method: :get) do %>
               <%= text_field_tag :search, params[:search], placeholder: "Votre adresse"%>
@@ -210,6 +311,7 @@
               </script>
             <% end %>
           </div>
+        </div>
         </div>
       </div>
     </div>
