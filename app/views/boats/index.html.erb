@@ -48,6 +48,7 @@
             <br>
             <li>d'une <strong>plate-forme</strong> où les acteurs (fédérations, appmas...) pourront mettre en ligne leurs actions.</li>
           </ul>
+          <%= link_to 'En savoir plus', le_site_path, class: "visible-xs" %>
           <%= link_to '', le_site_path, class: "card-link" %>
         </div>
       </div>
@@ -66,6 +67,7 @@
             <li>à <strong>but non lucratif</strong>.</li>
             <br>
           </ul>
+          <%= link_to 'En savoir plus', l_association_path, class: "visible-xs" %>
           <%= link_to '', l_association_path, class: "card-link" %>
         </div>
       </div>
@@ -85,6 +87,7 @@
             <br>
             <li>en devenant notre <strong>relais local</strong></li>
           </ul>
+          <%= link_to 'En savoir plus', contact_path, class: "visible-xs" %>
           <%= link_to '', contact_path, class: "card-link" %>
         </div>
       </div>
@@ -138,7 +141,7 @@
           <div class="social-media-card">
             <h3 class="text-center" id="title"> Un réseau social </h3>
           </div>
-          <div class="image-site">
+          <div class="image-site hidden-xs">
             <%= image_tag "fishermen_margin_crop.jpg" %>
           </div>
           <h4 class="text-center" id="title"> Fonctionnalités pour les pêcheurs </h4>

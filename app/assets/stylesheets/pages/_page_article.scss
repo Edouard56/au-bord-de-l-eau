@@ -5,12 +5,12 @@
 .text-pages {
   background-color: white;
   border-radius: 10px;
-  padding-right: 100px;
-  padding-left: 100px;
+  padding-right: 30px;
+  padding-left: 30px;
   padding-top: 20px;
   padding-bottom: 30px;
-  margin-right: 100px;
-  margin-left: 100px;
+  margin-right: 0px;
+  margin-left: 0px;
   margin-bottom: 40px;
   text-align: justify;
 
@@ -47,7 +47,7 @@
 }
 
 
-//contact
+// Page contact
 
 .bg-twitter {
   background: #00a3e1;
@@ -75,11 +75,9 @@
   }
 }
 
-
-// avatar
-
 .avatar-large {
   width: 150px;
   border-radius: 50%;
   height: 150px;
+  margin-left: 60px;
 }
