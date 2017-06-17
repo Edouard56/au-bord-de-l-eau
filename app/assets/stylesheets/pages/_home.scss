@@ -143,3 +143,15 @@
 }
 
 }
+
+// CSS de la photo mobile réseau social (ajout d'une scrollbar)
+
+ #mobile_social_network {
+  width: 340px;
+  height: 600px;
+  overflow-y: scroll;
+ }
+
+  .pagination-centered {
+    // margin-left: 30%;
+  }
