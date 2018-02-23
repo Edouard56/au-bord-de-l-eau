@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get "/le_projet",          to: "pages#le_projet"
   get "/l_association",          to: "pages#l_association"
   get "/le_site", to: "pages#le_site"
+  get "/soutiens", to: "pages#soutiens"
 end
